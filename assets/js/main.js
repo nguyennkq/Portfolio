@@ -1,5 +1,5 @@
 
-//!Hero type effect
+//! Hero type effect
 
   var typed = new Typed('.typed', {
     strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
@@ -17,4 +17,55 @@ window.addEventListener('load', () => {
    once: true,
    mirror: false
  })
+});
+
+//! Initiate Pure Counter 
+new PureCounter();
+
+//! Skills animation
+
+var waypoint = new Waypoint({
+  element: document.querySelector('.skills-content'),
+  offset : '80%',
+  handler: function(direction) {
+    let progress= document.querySelectorAll('.progress .progress-bar')
+    progress.forEach((el)=> {
+      el.style.width = el.getAttribute('aria-valuenow') + '%'
+    })
+  },
+})
+
+//! Porfolio isotope and filter
+
+window.addEventListener('load', () => {
+  let portfolioContainer = document.querySelector('.portfolio-container');
+  if (portfolioContainer) {
+    let portfolioIsotope = new Isotope(portfolioContainer, {
+      itemSelector: '.portfolio-item'
+    });
+
+    let portfolioFilters = document.querySelectorAll('#portfolio-filters li');
+
+    portfolioFilters.forEach(function(filter) {
+      filter.addEventListener('click', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    });
+  }
+});
+
+//! Initiate portfolio lightbox 
+const portfolioLightbox = GLightbox({
+ selector: '.portfolio-lightbox'
 });
