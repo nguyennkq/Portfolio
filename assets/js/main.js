@@ -117,7 +117,6 @@ const onscroll = (el, listener) => {
 
 
 let navbarlinks = document.querySelectorAll("#navbar .scrollto");
-console.log(navbarlinks)
 const navbarlinksActive = () => {
   let position = window.scrollY + 200;
   navbarlinks.forEach((navbarlink) => {
