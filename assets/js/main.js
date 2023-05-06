@@ -69,3 +69,34 @@ window.addEventListener('load', () => {
 const portfolioLightbox = GLightbox({
  selector: '.portfolio-lightbox'
 });
+
+//! Testimonials slider
+  
+  new Swiper('.testimonials-slider', {
+    speed: 600,
+    // tốc độ chuyển đổi giữa các slide
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      // mobile
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // tablet
+      1200: {
+        slidesPerView: 3,
+        // số slide mỗi lượt chuyển tiếp
+        spaceBetween: 20
+      }
+    }
+  });
