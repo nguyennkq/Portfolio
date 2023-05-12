@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <!-- Bootstrap css -->
         <link href="{{asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -49,6 +50,7 @@
         <script src="{{asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
         <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{asset('backend/assets/libs/node-waves/waves.min.js')}}"></script>
 
         <!-- App js -->
         <script src="{{asset('backend/assets/js/app.js')}}"></script>

@@ -4,21 +4,9 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
-                    <span class="logo-sm">
+                <a href="index.html">
+                    <span class="logo-sm" class="logo logo-dark">
                         <img src="{{asset('logo/profilenk.jpeg')}}" alt="logo-sm" height="40">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{asset('logo/profilenk.jpeg')}}" alt="logo-dark" height="40">
-                    </span>
-                </a>
-
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{asset('logo/profilenk.jpeg')}}" alt="logo-sm-light" height="40">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{asset('logo/profilenk.jpeg')}}" alt="logo-light" height="40">
                     </span>
                 </a>
             </div>
@@ -75,8 +63,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href=""><i class="ri-user-line align-middle me-1"></i>Profile</a>
-                    <a class="dropdown-item" href=""><i class="ri-wallet-2-line align-middle me-1"></i>Change Password</a>
+                    <a class="dropdown-item" href="{{route('profile.edit')}}"><i class="ri-user-line align-middle me-1"></i>Profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href=""><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
                 </div>

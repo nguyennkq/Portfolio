@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::controller(HomeController::class)->group(function(){
     Route::get("/",'HomeMain')->name('home');
 });
+
+
+//
+Route::controller(AboutController::class)->group(function(){
+    Route::get("/admin/about", 'AdminAbout')->name('admin.about');
+});
+
+
+
 
 Route::get('/dashboard', function () {
     // return view('dashboard');
