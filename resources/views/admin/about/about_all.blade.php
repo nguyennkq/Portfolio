@@ -11,9 +11,9 @@
                 <div class="card-body">
 
                     <h4 class="card-title">About All</h4>
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="post" action="{{route('update.about')}}" enctype="multipart/form-data">
                         @csrf
-
+                        <input type="hidden" name="id" value="{{$about->id}}">
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                             <div class="col-sm-10">
@@ -50,9 +50,9 @@
                     <!-- end row -->
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label"> </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
-                                <img id="showImage" class="rounded avatar-lg" src="" alt="Card image cap">
+                                <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($about->about_image)) ? url($about->about_image): "Image Empty"}}" alt="Card image cap">
                             </div>
                         </div>
                     <!-- end row -->
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <!-- end row -->
-                        <input type="submit" class="btn btn-info waves-effect waves-light" value="Update About Page">
+                        <input type="submit" class="btn btn-info waves-effect waves-light" value="Update About">
                     </form>
 
                 </div>
