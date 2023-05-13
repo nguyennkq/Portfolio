@@ -60,7 +60,8 @@
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">About Info</label>
                         <div class="col-sm-10">
-                            <input name="about_info" class="form-control" type="text" value="{{$about->about_info}}"  id="example-text-input">
+                            <textarea class="form-control" name="about_info" id="about_info" cols="30" rows="10">{{$about->about_info}}
+                            </textarea>
                         </div>
                     </div>
                     <!-- end row -->

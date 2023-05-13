@@ -20,7 +20,7 @@ class AboutController extends Controller
             $image= $request->file('about_image');
             $name = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-            Image::make($image)->resize(500,400)->save('upload/about/'.$name);
+            Image::make($image)->resize(500,500)->save('upload/about/'.$name);
 
             $save_url= 'upload/about/'.$name;
             About::findOrFail($about_id)->update([
@@ -31,7 +31,12 @@ class AboutController extends Controller
                 'about_info'=>$request->about_info,
             ]);
 
-            return redirect()->back();
+            $notification = array(
+                "message"=> "Updated About With Image Successfully",
+                "alert-type"=> "success"
+            );
+
+            return redirect()->back()->with($notification);
         }else {
             About::findOrFail($about_id)->update([
                 'title'=>$request->title,
@@ -40,8 +45,19 @@ class AboutController extends Controller
                 'about_info'=>$request->about_info,
             ]);
 
-            return redirect()->back();
+
+            $notification = array(
+                "message"=> "Updated About Without Image Successfully",
+                "alert-type"=> "success"
+            );
+
+            return redirect()->back()->with($notification);
         }
 
+    }
+
+    public function HomeAbout(){
+        $about_home = About::find(1);
+        return view('frontend.about',compact('about_home'));
     }
 }

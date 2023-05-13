@@ -25,6 +25,8 @@ Route::controller(HomeController::class)->group(function(){
 Route::controller(AboutController::class)->group(function(){
     Route::get("/admin/about", 'AdminAbout')->name('admin.about');
     Route::post("/update/about", 'UpdateAbout')->name('update.about');
+    Route::get("/home/about", 'HomeAbout')->name('home.about');
+
 });
 
 
