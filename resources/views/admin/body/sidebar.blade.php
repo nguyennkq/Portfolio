@@ -23,6 +23,16 @@
                         <li><a href="{{route('admin.about')}}">About All</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Skill</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('admin.skill')}}">Skill All</a></li>
+                        <li><a href="{{route('add.skill')}}">Skill Add</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
