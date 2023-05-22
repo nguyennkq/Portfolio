@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\About;
+use App\Models\Skill;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function HomeMain(){
-        return view('frontend.index');
+        $about_home = About::find(1);
+        $skill_all = Skill::all();
+        return view('frontend.index', compact('about_home','skill_all'));
     }
 }

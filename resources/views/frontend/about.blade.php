@@ -1,6 +1,6 @@
-@php
+{{-- @php
     $about_home = App\Models\About::find(1);
-@endphp
+@endphp --}}
 
 <section id="about" class="about">
     <div class="container">
@@ -28,4 +28,4 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
