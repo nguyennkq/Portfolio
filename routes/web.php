@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\SkillController;
+use App\Http\Controllers\Home\ResumeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,18 @@ Route::controller(SkillController::class)->group(function(){
 
 });
 
+
+Route::controller(ResumeController::class)->group(function(){
+    Route::get('/admin/resume', 'AdminResume')->name('admin.resume');
+    Route::get('/add/resume', 'AddResume')->name('add.resume');
+    Route::post('/store/resume', 'StoreResume')->name('store.resume');
+
+    Route::get('/edit/resume/{id}', 'EditResume')->name('edit.resume');
+    Route::post('/update/resume/{id}', 'UpdateResume')->name('update.resume');
+
+    Route::get('/delete/resume/{id}', 'DeleteResume')->name('delete.resume');
+
+});
 
 
 
