@@ -13,6 +13,9 @@
                     <h3 class="resume-title">{{$item->resume_title}}</h3>
                     <div class="resume-item pb-0">
                         <h4>{{$item->resume_subtitle}}</h4>
+                        @if ($item->start_time)
+                            <h5>{{substr($item->start_time, 0, 4)}} - {{substr($item->end_time, 0, 4)}}</h5>
+                        @endif
                         <p>{!! $item->resume_description !!}</p>
                     </div>
                 </div>
