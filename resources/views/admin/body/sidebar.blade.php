@@ -43,6 +43,16 @@
                         <li><a href="{{route('add.resume')}}">Resume Add</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Portfolio Category</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('admin.portfolio.category')}}">Portfolio Category All</a></li>
+                        <li><a href="{{route('add.portfolio.category')}}">Portfolio Category Add</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
