@@ -8,6 +8,7 @@ use App\Models\Resume;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\Service;
+use App\Models\Testimonial;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $portfolio = Portfolio::all();
         $portfolio_category = PortfolioCategory::all();
         $service = Service::all();
-        return view('frontend.main', compact('about_home','skill_all','resume_all','portfolio','portfolio_category','service'));
+        $testimonial = Testimonial::all();
+        return view('frontend.main', compact('about_home','skill_all','resume_all','portfolio','portfolio_category','service','testimonial'));
     }
 }
