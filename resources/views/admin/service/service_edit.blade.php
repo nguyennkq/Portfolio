@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Add Service</h4>
+                        <h4 class="card-title">Update Service</h4>
                         <form method="post" action="{{route('update.service', $service->id)}}" enctype="multipart/form-data">
                             @csrf
 

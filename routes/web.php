@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\ResumeController;
 use App\Http\Controllers\Home\PortfolioCategoryController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\ServiceController;
+use App\Http\Controllers\Home\TestimonialController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -101,6 +102,18 @@ Route::controller(ServiceController::class)->group(function(){
     Route::post('/update/service/{id}', 'UpdateService')->name("update.service");
 
     Route::get('/delete/service/{id}', 'DeleteService')->name("delete.service");
+
+});
+
+Route::controller(TestimonialController::class)->group(function(){
+    Route::get('/admin/testimonial/', 'AdminTestimonial')->name("admin.testimonial");
+    Route::get('/add/testimonial/', 'AddTestimonial')->name("add.testimonial");
+    Route::post('/store/testimonial/', 'StoreTestimonial')->name("store.testimonial");
+
+    Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name("edit.testimonial");
+    Route::post('/update/testimonial/{id}', 'UpdateTestimonial')->name("update.testimonial");
+
+    Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name("delete.testimonial");
 
 });
 
