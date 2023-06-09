@@ -7,6 +7,8 @@ use App\Http\Controllers\Home\SkillController;
 use App\Http\Controllers\Home\ResumeController;
 use App\Http\Controllers\Home\PortfolioCategoryController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\ServiceController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -86,6 +88,19 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name("delete.portfolio");
 
     Route::get('/portfolio/detail/{id}', 'DetailPortfolio')->name('detail.portfolio');
+
+});
+
+
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('/admin/service/', 'AdminService')->name("admin.service");
+    Route::get('/add/service/', 'AddService')->name("add.service");
+    Route::post('/store/service/', 'StoreService')->name("store.service");
+
+    Route::get('/edit/service/{id}', 'EditService')->name("edit.service");
+    Route::post('/update/service/{id}', 'UpdateService')->name("update.service");
+
+    Route::get('/delete/service/{id}', 'DeleteService')->name("delete.service");
 
 });
 
