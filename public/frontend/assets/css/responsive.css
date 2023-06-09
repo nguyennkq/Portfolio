@@ -6,6 +6,12 @@
   main {
     margin-left: 0;
   }
+
+  footer {
+    position: static;
+    width: auto;
+    padding-right: 20px 15px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -25,12 +31,16 @@
     line-height: 24px;
     margin-bottom: 30px;
   }
-}
 
-@media (max-width: 1199px) {
-  footer {
-    position: static;
-    width: auto;
-    padding-right: 20px 15px;
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+
+  .breadcrumbs ol {
+    display: block;
+  }
+
+  .breadcrumbs ol li {
+    display: inline-block;
   }
 }

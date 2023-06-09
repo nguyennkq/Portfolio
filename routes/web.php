@@ -71,6 +71,8 @@ Route::controller(PortfolioCategoryController::class)->group(function(){
 
     Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name("delete.portfolio.category");
 
+
+
 });
 
 Route::controller(PortfolioController::class)->group(function(){
@@ -82,6 +84,8 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('/update/portfolio/{id}', 'UpdatePortfolio')->name("update.portfolio");
 
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name("delete.portfolio");
+
+    Route::get('/portfolio/detail/{id}', 'DetailPortfolio')->name('detail.portfolio');
 
 });
 
