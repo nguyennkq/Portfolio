@@ -6,6 +6,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\SkillController;
 use App\Http\Controllers\Home\ResumeController;
 use App\Http\Controllers\Home\PortfolioCategoryController;
+use App\Http\Controllers\Home\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,6 +70,18 @@ Route::controller(PortfolioCategoryController::class)->group(function(){
     Route::post('/update/portfolio/category/{id}', 'UpdatePortfolioCategory')->name("update.portfolio.category");
 
     Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name("delete.portfolio.category");
+
+});
+
+Route::controller(PortfolioController::class)->group(function(){
+    Route::get('/admin/portfolio/', 'AdminPortfolio')->name("admin.portfolio");
+    Route::get('/add/portfolio/', 'AddPortfolio')->name("add.portfolio");
+    Route::post('/store/portfolio/', 'StorePortfolio')->name("store.portfolio");
+
+    Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name("edit.portfolio");
+    Route::post('/update/portfolio/{id}', 'UpdatePortfolio')->name("update.portfolio");
+
+    Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name("delete.portfolio");
 
 });
 
