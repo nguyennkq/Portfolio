@@ -9,6 +9,7 @@ use App\Http\Controllers\Home\PortfolioCategoryController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\ServiceController;
 use App\Http\Controllers\Home\TestimonialController;
+use App\Http\Controllers\Home\ContactController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -114,6 +115,14 @@ Route::controller(TestimonialController::class)->group(function(){
     Route::post('/update/testimonial/{id}', 'UpdateTestimonial')->name("update.testimonial");
 
     Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name("delete.testimonial");
+
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/admin/contact/', 'AdminContact')->name("admin.contact");
+    Route::post('/store/contact/', 'StoreContact')->name("store.contact");
+
+    Route::get('/delete/contact/{id}', 'DeleteContact')->name("delete.contact");
 
 });
 

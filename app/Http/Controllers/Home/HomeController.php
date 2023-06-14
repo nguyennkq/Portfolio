@@ -24,4 +24,6 @@ class HomeController extends Controller
         $testimonial = Testimonial::all();
         return view('frontend.main', compact('about_home','skill_all','resume_all','portfolio','portfolio_category','service','testimonial'));
     }
+
+
 }
