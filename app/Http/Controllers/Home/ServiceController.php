@@ -18,6 +18,11 @@ class ServiceController extends Controller
     }
 
     public function StoreService(Request $request){
+        $request->validate([
+            'service_title'=>'required',
+            'service_icon'=>'required',
+            'service_description'=>'required',
+        ]);
         Service::insert([
             "service_title" => $request->service_title,
             "service_icon" => $request->service_icon,

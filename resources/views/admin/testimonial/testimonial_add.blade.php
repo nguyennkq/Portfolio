@@ -19,6 +19,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Testimonial Username</label>
                                 <div class="col-sm-10">
                                     <input name="testimonial_username" class="form-control" type="text" id="testimonial_username">
+                                    @error('testimonial_username')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -26,6 +29,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Testimonial Description</label>
                                 <div class="col-sm-10">
                                     <input name="testimonial_description" class="form-control" type="text" id="testimonial_description">
+                                    @error('testimonial_description')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -47,6 +53,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Testimonial Job</label>
                                 <div class="col-sm-10">
                                     <input name="testimonial_job" class="form-control" type="text" id="testimonial_job">
+                                    @error('testimonial_job')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 

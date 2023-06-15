@@ -21,7 +21,12 @@ class PortfolioController extends Controller
     }
 
     public function StorePortfolio(Request $request){
-
+        $request->validate([
+            'portfolio_category_id'=>'required',
+            'portfolio_title'=>'required',
+            'portfolio_url'=>'required',
+            'portfolio_description'=>'required',
+        ]);
         $image = $request->file('portfolio_image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 

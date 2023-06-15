@@ -19,6 +19,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Service Title</label>
                                 <div class="col-sm-10">
                                     <input name="service_title" class="form-control" type="text" id="service_title">
+                                    @error('service_title')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -26,6 +29,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Service Icon</label>
                                 <div class="col-sm-10">
                                     <input name="service_icon" class="form-control" type="text" id="service_icon">
+                                    @error('service_icon')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -34,6 +40,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Service Description</label>
                                 <div class="col-sm-10">
                                     <input name="service_description" class="form-control" type="text" id="service_description">
+                                    @error('service_description')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 

@@ -15,6 +15,12 @@ class ContactController extends Controller
     }
 
     public function StoreContact(Request $request){
+        $request->validate([
+            'contact_name'=>'required',
+            'contact_email'=>'required',
+            'contact_phone'=>'required',
+            'contact_message'=>'required',
+        ]);
         Contact::insert([
             'contact_name'=>$request->contact_name,
             'contact_email'=>$request->contact_email,
@@ -28,7 +34,7 @@ class ContactController extends Controller
             'message' => 'Contact sent successfully.'
         );
 
-        return redirect()->route('home')->with($notification);
+        return back()->with($notification);
     }
 
     public function DeleteContact($id){

@@ -17,7 +17,10 @@
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Skill Name</label>
                             <div class="col-sm-10">
-                                <input name="skill_name" class="form-control" type="text" id="skill_name">
+                                <input name="skill_name" class="form-control" type="text" id="skill_name" value="{{ old('skill_name') }}">
+                                @error('skill_name')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     <!-- end row -->
@@ -25,7 +28,10 @@
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Skill Number</label>
                             <div class="col-sm-10">
-                                <input name="skill_number" class="form-control" type="number" id="skill_number">
+                                <input name="skill_number" class="form-control" type="text" id="skill_number" value="{{ old('skill_number') }}">
+                                @error('skill_number')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     <!-- end row -->

@@ -23,6 +23,14 @@ class SkillController extends Controller
 
     public function StoreSkill(Request $request)
     {
+        $request->validate([
+            'skill_name'=>'required',
+            'skill_number'=>'required|numeric',
+        ], [
+            'skill_name.required' => 'Skill Name is Required',
+            'skill_number.required' => 'Skill Number is Required',
+            'skill_number.numeric' => 'Skill Number is Not Number',
+        ]);
         Skill::insert([
             'skill_name' => $request->skill_name,
             'skill_number' => $request->skill_number,

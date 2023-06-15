@@ -19,6 +19,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Resume Title</label>
                                 <div class="col-sm-10">
                                     <input name="resume_title" class="form-control" type="text" id="resume_title">
+                                    @error('resume_title')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->
@@ -27,6 +30,9 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Resume Sub Title</label>
                                     <div class="col-sm-10">
                                         <input name="resume_subtitle" class="form-control" type="text" id="resume_subtitle">
+                                    @error('resume_subtitle')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                     </div>
                                 </div>
                             <!-- end row -->
@@ -35,6 +41,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Resume Description </label>
                                 <div class="col-sm-10">
                                     <textarea id="elm1" name="resume_description"></textarea>
+                                    @error('resume_description')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->
@@ -44,6 +53,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Resume Start Date</label>
                                 <div class="col-sm-10">
                                     <input name="start_time" class="form-control" type="month" value="" id="example-text-input">
+                                    @error('start_time')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->
@@ -52,6 +64,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Resume End Date</label>
                                 <div class="col-sm-10">
                                     <input  name="end_time" class="form-control" type="month" value="" id="example-text-input">
+                                    @error('end_time')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <!-- end row -->

@@ -19,6 +19,11 @@ class TestimonialController extends Controller
     }
 
     public function StoreTestimonial(Request $request){
+        $request->validate([
+            'testimonial_username'=>'required',
+            'testimonial_description'=>'required',
+            'testimonial_job'=>'required',
+        ]);
 
         $avatar = $request->file('testimonial_avatar');
         $name_gen = hexdec(uniqid()).'.'.$avatar->getClientOriginalExtension();

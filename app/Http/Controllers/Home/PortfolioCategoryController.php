@@ -19,6 +19,9 @@ class PortfolioCategoryController extends Controller
     }
 
     public function StorePortfolioCategory(Request $request){
+        $request->validate([
+            'category_name'=>'required'
+        ]);
         PortfolioCategory::insert([
             "category_name" => $request->category_name
         ]);

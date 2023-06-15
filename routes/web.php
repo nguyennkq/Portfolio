@@ -75,8 +75,6 @@ Route::controller(PortfolioCategoryController::class)->group(function(){
 
     Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name("delete.portfolio.category");
 
-
-
 });
 
 Route::controller(PortfolioController::class)->group(function(){

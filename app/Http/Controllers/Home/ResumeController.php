@@ -18,6 +18,15 @@ class ResumeController extends Controller
     }
 
     public function StoreResume(Request $request){
+
+        $request->validate([
+            'resume_title'=> 'required',
+            'resume_subtitle'=> 'required',
+            'start_time'=> 'required',
+            'end_time'=> 'required',
+            'resume_description'=> 'required',
+        ]);
+
         Resume::insert([
             "resume_title"=>$request->resume_title,
             "resume_subtitle"=>$request->resume_subtitle,

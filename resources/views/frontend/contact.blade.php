@@ -37,23 +37,34 @@
           <form action="{{route('store.contact')}}" method="post" role="form">
             @csrf
             <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="contact_name" class="form-control" id="contact_name" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="contact_email" id="contact_email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Your Phone</label>
-              <input type="text" class="form-control" name="contact_phone" id="contact_phone" required>
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="contact_message" rows="10" required></textarea>
-            </div>
+                <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="contact_name" class="form-control" id="contact_name">
+                    @error('contact_name')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="name">Your Email</label>
+                    <input type="email" class="form-control" name="contact_email" id="contact_email">
+                    @error('contact_email')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="name">Your Phone</label>
+                    <input type="text" class="form-control" name="contact_phone" id="contact_phone">
+                    @error('contact_phone')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="contact_message" rows="10"></textarea>
+                    @error('contact_message')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div>

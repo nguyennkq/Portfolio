@@ -19,6 +19,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Category Name</label>
                                 <div class="col-sm-10">
                                     <input name="category_name" class="form-control" type="text" id="category_name">
+                                    @error('category_name')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 

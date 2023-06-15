@@ -19,11 +19,16 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category Name</label>
                                 <div class="col-sm-10">
                                     <select name="portfolio_category_id" class="form-select" aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
+                                        <option selected disabled>Open this select menu</option>
                                         @foreach ($category as $item)
-                                            <option value="{{$item->id}}">{{$item->category_name}}</option>
+                                            <option value="{{$item->id}}" {{ old('portfolio_category_id') == $item->id ? 'selected' : '' }}>{{$item->category_name}}</option>
                                         @endforeach
                                     </select>
+                                    @error('portfolio_category_id')
+                                        @if(old('portfolio_category_id') == null)
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @endif
+                                    @enderror
                                 </div>
                             </div>
 
@@ -31,6 +36,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Title</label>
                                 <div class="col-sm-10">
                                     <input name="portfolio_title" class="form-control" type="text" id="portfolio_title">
+                                    @error('portfolio_title')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -52,6 +60,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio URL</label>
                                 <div class="col-sm-10">
                                     <input name="portfolio_url" class="form-control" type="text" id="portfolio_url">
+                                    @error('portfolio_url')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -60,6 +71,9 @@
                                 <label for="example-text-input" class="col-sm-2 col-form-label">Portfolio Description</label>
                                 <div class="col-sm-10">
                                     <textarea id="elm1" name="portfolio_description"></textarea>
+                                    @error('portfolio_description')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
